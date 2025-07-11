@@ -1,0 +1,229 @@
+/* Main application styles */
+:root {
+  --primary-color: #3B82F6;
+  --secondary-color: #8B5CF6;
+  --accent-color: #10B981;
+  --background-color: #F9FAFB;
+  --text-color: #1F2937;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --animation-duration: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  height: 100vh;
+  padding: 1rem;
+}
+
+/* Header */
+.app-header {
+  grid-column: 1 / -1;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.animation-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.animation-nav button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--border-color);
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--animation-duration);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.animation-nav button:hover {
+  border-color: var(--primary-color);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.animation-nav button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Animation Container */
+.animation-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stage {
+  flex: 1;
+  background: #F3F4F6;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+/* Animation Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #F9FAFB;
+  border-radius: 6px;
+}
+
+.control-btn {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background var(--animation-duration);
+  white-space: nowrap;
+}
+
+.control-btn:hover {
+  background: #2563EB;
+}
+
+.timeline {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #E5E7EB;
+  border-radius: 3px;
+  outline: none;
+}
+
+.timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform var(--animation-duration);
+}
+
+.timeline::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Info Panel */
+.info-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.info-panel h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+#animation-info h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+#animation-info p {
+  color: #6B7280;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Animation Elements */
+.animation-element {
+  position: absolute;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.shape.circle {
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+
+.shape.square {
+  background: var(--primary-color);
+}
+
+.shape.triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .info-panel {
+    grid-column: 1;
+  }
+  
+  .animation-nav {
+    flex-wrap: wrap;
+  }
+  
+  .controls {
+    flex-wrap: wrap;
+  }
+  
+  .timeline {
+    width: 100%;
+    order: 3;
+  }
+}

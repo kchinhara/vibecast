@@ -1,0 +1,34 @@
+{
+  "name": "kuda-animator",
+  "version": "0.1.0",
+  "description": "Educational animation framework for interactive learning experiences",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\""
+  },
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "express": "^5.1.0",
+    "gsap": "^3.12.5",
+    "lottie-web": "^5.12.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "vite": "^5.0.10"
+  },
+  "keywords": [
+    "animation",
+    "education",
+    "interactive",
+    "learning",
+    "kuda"
+  ],
+  "author": "Kuda Learning",
+  "license": "MIT"
+}

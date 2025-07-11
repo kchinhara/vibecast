@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henry George Economics - Interactive Educational Animations</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/henry-george.css">
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>🌍 Henry George Economics: Understanding Progress & Poverty</h1>
+      <nav class="animation-nav">
+        <div class="nav-section">
+          <h3>Start Here</h3>
+          <button data-animation="henryGeorgeIntro" class="active">Introduction</button>
+        </div>
+        <div class="nav-section">
+          <h3>Core Concepts</h3>
+          <button data-animation="rentWedge">The Rent Wedge</button>
+          <button data-animation="threeFactorPie">Three Factors</button>
+        </div>
+        <div class="nav-section">
+          <h3>Animation Demos</h3>
+          <button data-animation="concepts">Animation Concepts</button>
+          <button data-animation="interactive">Interactive Demo</button>
+        </div>
+      </nav>
+    </header>
+    
+    <main class="animation-container">
+      <div id="animation-stage" class="stage">
+        <!-- Animation content will be rendered here -->
+      </div>
+      
+      <div class="controls">
+        <button id="play-pause" class="control-btn">▶️ Play</button>
+        <input type="range" id="timeline-scrubber" class="timeline" min="0" max="100" value="0">
+        <button id="reset" class="control-btn">↺ Reset</button>
+      </div>
+    </main>
+    
+    <aside class="info-panel">
+      <h2>Animation Info</h2>
+      <div id="animation-info">
+        <h3>Welcome to Henry George Economics</h3>
+        <p>Discover why poverty persists despite progress, and learn about the revolutionary solution proposed by 19th century economist Henry George.</p>
+        <p>These interactive animations will help you understand:</p>
+        <ul>
+          <li>How land values capture community-created wealth</li>
+          <li>Why workers receive less as productivity increases</li>
+          <li>How a single tax on land could solve inequality</li>
+        </ul>
+        <p><strong>Start with the Land Value Gradient to begin your journey!</strong></p>
+      </div>
+    </aside>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

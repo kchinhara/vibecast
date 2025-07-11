@@ -1,0 +1,278 @@
+/* Henry George Educational Theme Styles */
+
+:root {
+  --hg-land: #10B981;
+  --hg-labor: #3B82F6;
+  --hg-capital: #F59E0B;
+  --hg-rent: #EF4444;
+  --hg-bg-dark: #1F2937;
+  --hg-bg-light: #F3F4F6;
+}
+
+/* Enhanced Navigation */
+.nav-section {
+  margin-bottom: 1rem;
+}
+
+.nav-section h3 {
+  font-size: 0.875rem;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.animation-nav button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+  border: none;
+  background: white;
+  color: #374151;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.animation-nav button:hover {
+  background: var(--hg-bg-light);
+  transform: translateX(4px);
+}
+
+.animation-nav button.active {
+  background: var(--hg-labor);
+  color: white;
+  font-weight: 600;
+}
+
+/* Info Panel Enhancements */
+.info-panel {
+  background: linear-gradient(to bottom, white, var(--hg-bg-light));
+  padding: 2rem;
+  border-left: 4px solid var(--hg-land);
+}
+
+.info-panel h3 {
+  color: var(--hg-bg-dark);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.info-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-panel li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.info-panel li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--hg-land);
+  font-weight: bold;
+}
+
+/* Stage Enhancements */
+.stage {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Economic Color Indicators */
+.land-indicator {
+  background-color: var(--hg-land);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.labor-indicator {
+  background-color: var(--hg-labor);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.capital-indicator {
+  background-color: var(--hg-capital);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.rent-indicator {
+  background-color: var(--hg-rent);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Animation Elements */
+.economic-value {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: var(--hg-land);
+}
+
+.percentage-display {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Interactive Elements */
+.simulator-grid {
+  display: grid;
+  gap: 1px;
+  background: #E5E7EB;
+  padding: 1px;
+  border-radius: 0.5rem;
+  user-select: none;
+}
+
+.grid-cell {
+  background: white;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.25rem;
+}
+
+.grid-cell:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Control Panel Styling */
+.control-panel {
+  background: var(--hg-bg-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.slider-control {
+  margin-bottom: 1rem;
+}
+
+.slider-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--hg-bg-dark);
+}
+
+.slider-control input[type="range"] {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #E5E7EB;
+  outline: none;
+}
+
+.slider-control input[type="range"]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--hg-labor);
+  cursor: pointer;
+}
+
+/* Educational Tooltips */
+.tooltip {
+  position: absolute;
+  background: var(--hg-bg-dark);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+.tooltip.show {
+  opacity: 1;
+}
+
+/* Quote Box */
+.george-quote {
+  background: linear-gradient(135deg, var(--hg-land), var(--hg-labor));
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  position: relative;
+}
+
+.george-quote::before {
+  content: "\201C";
+  font-size: 3rem;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  opacity: 0.3;
+}
+
+/* Animation Info Cards */
+.info-card {
+  background: white;
+  border: 2px solid var(--hg-land);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .nav-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-section h3 {
+    width: 100%;
+  }
+  
+  .animation-nav button {
+    width: auto;
+    flex: 1;
+  }
+}
